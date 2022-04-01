@@ -1,0 +1,61 @@
+@keyframes transformItems {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes untransformItems {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes scaleAnim {
+	0% {
+		transform: scale(1) translateX(-200px);
+	}
+	100% {
+		transform: scale(1.3) translateX(-200px);
+	}
+}
+@keyframes scaleAnimB {
+	0% {
+		transform: scale(1) translateX(200px);
+	}
+	100% {
+		transform: scale(1.3) translateX(200px);
+	}
+}
+
+@keyframes dash {
+	100% {
+		stroke-dashoffset: 500;
+		visibility: hidden;
+	}
+}
+@keyframes dash-r {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+// @keyframes scaleAnimAfter {
+// 	0% {
+// 		transform: scale(1);
+// 	}
+// 	100% {
+// 		transform: scale(1.3) translateX(-200px);
+// 	}
+// }
+
+// @keyframes scaleAnimAfterB {
+// 	0% {
+// 		transform: scale(1);
+// 	}
+// 	100% {
+// 		transform: scale(1.3) translateX(200px);
+// 	}
+// }

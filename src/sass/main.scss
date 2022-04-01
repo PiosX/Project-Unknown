@@ -1,0 +1,661 @@
+@import "animations";
+@import "colors";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+}
+
+// BACKGROUND
+// .background {
+// 	&-svg {
+// 		position: absolute;
+// 		background-image: url("/dist/img/background.svg");
+// 		background-position-x: center;
+// 		background-size: cover;
+// 		width: 100%;
+// 		height: 480vh;
+// 		z-index: 1;
+// 	}
+// }
+
+// HEADER SECTION
+.header {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $black;
+	overflow: hidden;
+
+	.path {
+		&-item {
+			position: absolute;
+			background-color: #fff;
+			z-index: 2;
+		}
+		&-item:nth-child(1) {
+			top: 10%;
+			left: 93%;
+			width: 2px;
+			height: 0;
+		}
+		&-item:nth-child(2) {
+			top: 95%;
+			left: 50%;
+			width: 43%;
+			height: 2px;
+			transform-origin: 100% 50%;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(3) {
+			top: 95%;
+			left: 50%;
+			width: 2px;
+			height: 0;
+		}
+	}
+
+	&__box {
+		&-item {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-image: url("/dist/img/city.jpg");
+			background-position: center;
+			background-size: cover;
+			z-index: 1;
+		}
+		.item-pos-anim {
+			animation: transformItems 1s forwards;
+		}
+		.item-opacity {
+			animation: untransformItems 1s forwards;
+		}
+
+		&-item:nth-child(1) {
+			display: none;
+		}
+		&-item:nth-child(2) {
+			display: none;
+		}
+		&-item:nth-child(3) {
+			display: none;
+		}
+		&-item:nth-child(4) {
+			display: none;
+		}
+		&-item:nth-child(5) {
+			display: none;
+		}
+		&-item:nth-child(6) {
+			display: none;
+		}
+		&-item:nth-child(7) {
+			display: none;
+		}
+		&-item:nth-child(8) {
+			display: none;
+		}
+		&-item:nth-child(9) {
+			display: none;
+		}
+		&-item:nth-child(10) {
+			display: none;
+		}
+		&-item:nth-child(11) {
+			display: none;
+		}
+		&-item:nth-child(12) {
+			display: none;
+		}
+		&-item:nth-child(13) {
+			display: none;
+		}
+		&-item:nth-child(14) {
+			display: none;
+		}
+		&-item:nth-child(15) {
+			display: none;
+		}
+		&-item:nth-child(16) {
+			display: none;
+		}
+		&-item:nth-child(17) {
+			display: none;
+		}
+		&-item:nth-child(18) {
+			display: none;
+		}
+		&-item:nth-child(19) {
+			display: none;
+		}
+		&-item:nth-child(20) {
+			display: none;
+		}
+		&-item:nth-child(21) {
+			display: none;
+		}
+		&-item:nth-child(22) {
+			display: none;
+		}
+		&-item:nth-child(23) {
+			display: none;
+		}
+		&-item:nth-child(24) {
+			display: none;
+		}
+		&-item:nth-child(25) {
+			display: none;
+		}
+		&-item:nth-child(26) {
+			display: none;
+		}
+		&-item:nth-child(27) {
+			display: none;
+		}
+		&-item:nth-child(28) {
+			display: none;
+		}
+		&-item:nth-child(29) {
+			display: none;
+		}
+		&-item:nth-child(30) {
+			display: none;
+		}
+		&-item:nth-child(31) {
+			display: none;
+		}
+		&-item:nth-child(32) {
+			display: none;
+		}
+		&-item:nth-child(33) {
+			display: none;
+		}
+		&-item:nth-child(34) {
+			display: none;
+		}
+		&-item:nth-child(35) {
+			display: none;
+		}
+		&-item:nth-child(36) {
+			display: none;
+		}
+		&-item:nth-child(37) {
+			display: none;
+		}
+		&-item:nth-child(38) {
+			display: none;
+		}
+		&-item:nth-child(39) {
+			display: none;
+		}
+		&-item:nth-child(40) {
+			clip-path: polygon(27% 32%, 10% 21%, 23% 12%);
+		}
+		&-item:nth-child(41) {
+			clip-path: polygon(27% 32%, 10% 21%, 15% 34%);
+		}
+		&-item:nth-child(42) {
+			clip-path: polygon(27% 32%, 20% 46%, 15% 34%);
+		}
+		&-item:nth-child(43) {
+			clip-path: polygon(27% 32%, 20% 46%, 40% 49%);
+		}
+		&-item:nth-child(44) {
+			clip-path: polygon(30% 63%, 20% 46%, 40% 49%);
+		}
+		&-item:nth-child(45) {
+			clip-path: polygon(30% 63%, 20% 46%, 14% 57%);
+		}
+		&-item:nth-child(46) {
+			clip-path: polygon(30% 63%, 15% 73%, 14% 57%);
+		}
+		&-item:nth-child(47) {
+			clip-path: polygon(30% 63%, 15% 73%, 31% 79%);
+		}
+		&-item:nth-child(48) {
+			clip-path: polygon(21% 89%, 15% 73%, 31% 79%);
+		}
+		&-item:nth-child(49) {
+			clip-path: polygon(21% 89%, 15% 73%, 6% 88%);
+		}
+		&-item:nth-child(50) {
+			clip-path: polygon(21% 89%, 39% 85%, 31% 79%);
+		}
+		&-item:nth-child(51) {
+			clip-path: polygon(41% 64%, 39% 85%, 31% 79%);
+		}
+		&-item:nth-child(52) {
+			clip-path: polygon(41% 64%, 30% 63%, 31% 79%);
+		}
+		&-item:nth-child(53) {
+			clip-path: polygon(41% 64%, 30% 63%, 40% 49%);
+		}
+		&-item:nth-child(54) {
+			clip-path: polygon(41% 64%, 59% 61%, 40% 49%);
+		}
+		&-item:nth-child(55) {
+			clip-path: polygon(41% 64%, 59% 61%, 51% 77%);
+		}
+		&-item:nth-child(56) {
+			clip-path: polygon(41% 64%, 39% 85%, 51% 77%);
+		}
+		&-item:nth-child(57) {
+			clip-path: polygon(59% 89%, 39% 85%, 51% 77%);
+		}
+		&-item:nth-child(58) {
+			clip-path: polygon(59% 89%, 72% 77%, 51% 77%);
+		}
+		&-item:nth-child(59) {
+			clip-path: polygon(59% 89%, 72% 77%, 84% 85%);
+		}
+		&-item:nth-child(60) {
+			clip-path: polygon(80% 71%, 72% 77%, 84% 85%);
+		}
+		&-item:nth-child(61) {
+			clip-path: polygon(80% 71%, 72% 77%, 70% 67%);
+		}
+		&-item:nth-child(62) {
+			clip-path: polygon(51% 77%, 72% 77%, 70% 67%);
+		}
+		&-item:nth-child(63) {
+			clip-path: polygon(51% 77%, 59% 61%, 70% 67%);
+		}
+		&-item:nth-child(64) {
+			clip-path: polygon(72% 50%, 59% 61%, 70% 67%);
+		}
+		&-item:nth-child(65) {
+			clip-path: polygon(72% 50%, 88% 52%, 70% 67%);
+		}
+		&-item:nth-child(66) {
+			clip-path: polygon(80% 71%, 88% 52%, 70% 67%);
+		}
+		&-item:nth-child(67) {
+			clip-path: polygon(72% 50%, 59% 61%, 54% 43%);
+		}
+		&-item:nth-child(68) {
+			clip-path: polygon(40% 49%, 59% 61%, 54% 43%);
+		}
+		&-item:nth-child(69) {
+			clip-path: polygon(40% 49%, 41% 32%, 54% 43%);
+		}
+		&-item:nth-child(70) {
+			clip-path: polygon(40% 49%, 41% 32%, 27% 32%);
+		}
+		&-item:nth-child(71) {
+			clip-path: polygon(54% 21%, 41% 32%, 37% 18%);
+		}
+		&-item:nth-child(72) {
+			clip-path: polygon(54% 21%, 66% 23%, 52% 11%);
+		}
+		&-item:nth-child(73) {
+			clip-path: polygon(54% 21%, 66% 23%, 57% 35%);
+		}
+		&-item:nth-child(74) {
+			clip-path: polygon(54% 21%, 41% 32%, 57% 35%);
+		}
+		&-item:nth-child(75) {
+			clip-path: polygon(54% 43%, 41% 32%, 57% 35%);
+		}
+		&-item:nth-child(76) {
+			clip-path: polygon(54% 43%, 73% 40%, 57% 35%);
+		}
+		&-item:nth-child(77) {
+			clip-path: polygon(54% 43%, 73% 40%, 72% 50%);
+		}
+		&-item:nth-child(78) {
+			clip-path: polygon(88% 52%, 73% 40%, 72% 50%);
+		}
+		&-item:nth-child(79) {
+			clip-path: polygon(88% 52%, 73% 40%, 81% 33%);
+		}
+		&-item:nth-child(80) {
+			clip-path: polygon(66% 23%, 73% 40%, 81% 33%);
+		}
+		&-item:nth-child(81) {
+			clip-path: polygon(66% 23%, 73% 40%, 57% 35%);
+		}
+		&-item:nth-child(82) {
+			clip-path: polygon(54% 21%, 37% 18%, 52% 11%);
+		}
+		&-item:nth-child(83) {
+			clip-path: polygon(23% 12%, 37% 18%, 52% 11%);
+		}
+		&-item:nth-child(84) {
+			clip-path: polygon(23% 12%, 37% 18%, 27% 32%);
+		}
+		&-item:nth-child(85) {
+			clip-path: polygon(41% 32%, 37% 18%, 27% 32%);
+		}
+	}
+}
+
+// SPLIT SECTION
+.split {
+	position: relative;
+	height: 100vh;
+	background-color: $black;
+	color: #fff;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	.path-s {
+		&-item {
+			position: absolute;
+			background-color: #fff;
+			z-index: 2;
+		}
+		&-item:nth-child(1) {
+			top: 0;
+			left: 50%;
+			width: 2px;
+			height: 0;
+		}
+		&-item:nth-child(2) {
+			top: 25%;
+			left: 42.5%;
+			width: 15%;
+			height: 2px;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(3) {
+			top: 25%;
+			left: 42.5%;
+			width: 2px;
+			height: 0;
+		}
+		&-item:nth-child(4) {
+			top: 25%;
+			left: 57.5%;
+			width: 2px;
+			height: 0;
+		}
+		&-item:nth-child(5) {
+			top: 75%;
+			left: 42.5%;
+			width: 7.5%;
+			height: 2px;
+			transform-origin: 0;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(6) {
+			top: 75%;
+			left: 50%;
+			width: 7.5%;
+			height: 2px;
+			transform-origin: 100%;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(7) {
+			top: 75%;
+			left: 50%;
+			width: 2px;
+			height: 0;
+		}
+	}
+
+	&__box {
+		position: relative;
+		max-width: 1200px;
+		height: 50vh;
+		transition: opacity 1s, transform 1s;
+		&--first {
+			min-width: 480px;
+			height: 70vh;
+			margin-right: 1em;
+			&-item {
+				display: block;
+				min-width: 100%;
+				height: 70vh;
+				position: absolute;
+				background-image: url("/dist/img/smile-f.png");
+				background-position: right;
+				background-size: auto;
+				transition: transform 1s, background 0.2s;
+				cursor: pointer;
+			}
+
+			&-item:nth-child(1) {
+				clip-path: polygon(100% 13%, 85% 15%, 100% 24%);
+			}
+			&-item:nth-child(2) {
+				clip-path: polygon(76% 23%, 85% 15%, 100% 24%);
+			}
+			&-item:nth-child(3) {
+				clip-path: polygon(76% 23%, 85% 32%, 100% 24%);
+			}
+			&-item:nth-child(4) {
+				clip-path: polygon(76% 23%, 85% 32%, 70% 31%);
+			}
+			&-item:nth-child(5) {
+				clip-path: polygon(69% 40%, 85% 32%, 70% 31%);
+			}
+			&-item:nth-child(6) {
+				clip-path: polygon(69% 40%, 85% 32%, 86% 45%);
+			}
+			&-item:nth-child(7) {
+				clip-path: polygon(69% 40%, 67% 52%, 86% 45%);
+			}
+			&-item:nth-child(8) {
+				clip-path: polygon(74% 59%, 67% 52%, 86% 45%);
+			}
+			&-item:nth-child(9) {
+				clip-path: polygon(74% 59%, 91% 58%, 86% 45%);
+			}
+			&-item:nth-child(10) {
+				clip-path: polygon(74% 59%, 91% 58%, 81% 68%);
+			}
+			&-item:nth-child(11) {
+				clip-path: polygon(100% 68%, 91% 58%, 81% 68%);
+			}
+			&-item:nth-child(12) {
+				clip-path: polygon(100% 68%, 91% 76%, 81% 68%);
+			}
+			&-item:nth-child(13) {
+				clip-path: polygon(100% 68%, 91% 76%, 100% 78%);
+			}
+			&-item:nth-child(14) {
+				clip-path: polygon(100% 68%, 91% 58%, 100% 58%);
+			}
+			&-item:nth-child(15) {
+				clip-path: polygon(100% 48%, 91% 58%, 100% 58%);
+			}
+			&-item:nth-child(16) {
+				clip-path: polygon(100% 48%, 91% 58%, 88% 50%);
+			}
+			&-item:nth-child(17) {
+				clip-path: polygon(100% 48%, 86% 45%, 88% 50%);
+			}
+			&-item:nth-child(18) {
+				clip-path: polygon(100% 48%, 86% 45%, 100% 40%);
+			}
+			&-item:nth-child(19) {
+				clip-path: polygon(85% 32%, 86% 45%, 100% 40%);
+			}
+			&-item:nth-child(20) {
+				clip-path: polygon(85% 32%, 94% 27%, 100% 40%);
+			}
+			&-item:nth-child(21) {
+				clip-path: polygon(100% 24%, 94% 27%, 100% 40%);
+			}
+		}
+		&--second {
+			min-width: 480px;
+			height: 70vh;
+			&-item {
+				width: 100%;
+				height: 68.5vh;
+				position: absolute;
+				background-image: url("/dist/img/angry-f.png");
+				background-position: left;
+				background-size: auto;
+				transition: transform 1s, background 0.2s;
+				cursor: pointer;
+			}
+			&-item:nth-child(1) {
+				clip-path: polygon(12% 15%, 0 13%, 0 24%);
+			}
+			&-item:nth-child(2) {
+				clip-path: polygon(12% 15%, 11% 26%, 0 24%);
+			}
+			&-item:nth-child(3) {
+				clip-path: polygon(12% 15%, 11% 26%, 25% 20%);
+			}
+			&-item:nth-child(4) {
+				clip-path: polygon(31% 28%, 11% 26%, 25% 20%);
+			}
+			&-item:nth-child(5) {
+				clip-path: polygon(31% 28%, 11% 26%, 20% 34%);
+			}
+			&-item:nth-child(6) {
+				clip-path: polygon(31% 28%, 31% 42%, 20% 34%);
+			}
+			&-item:nth-child(7) {
+				clip-path: polygon(17% 45%, 31% 42%, 20% 34%);
+			}
+			&-item:nth-child(8) {
+				clip-path: polygon(17% 45%, 31% 42%, 33% 51%);
+			}
+			&-item:nth-child(9) {
+				clip-path: polygon(17% 45%, 23% 57%, 33% 51%);
+			}
+			&-item:nth-child(10) {
+				clip-path: polygon(17% 45%, 23% 57%, 8% 57%);
+			}
+			&-item:nth-child(11) {
+				clip-path: polygon(16% 68%, 23% 57%, 8% 57%);
+			}
+			&-item:nth-child(12) {
+				clip-path: polygon(16% 68%, 0 65%, 8% 57%);
+			}
+			&-item:nth-child(13) {
+				clip-path: polygon(16% 68%, 0 65%, 0 75%);
+			}
+			&-item:nth-child(14) {
+				clip-path: polygon(16% 68%, 8% 78%, 0 75%);
+			}
+			&-item:nth-child(15) {
+				clip-path: polygon(0 79%, 8% 78%, 0 75%);
+			}
+			&-item:nth-child(16) {
+				clip-path: polygon(0 50%, 0 65%, 8% 57%);
+			}
+			&-item:nth-child(17) {
+				clip-path: polygon(0 50%, 17% 45%, 8% 57%);
+			}
+			&-item:nth-child(18) {
+				clip-path: polygon(0 50%, 17% 45%, 9% 39%);
+			}
+			&-item:nth-child(19) {
+				clip-path: polygon(0 50%, 0 39%, 9% 39%);
+			}
+			&-item:nth-child(20) {
+				clip-path: polygon(0 30%, 0 39%, 9% 39%);
+			}
+			&-item:nth-child(21) {
+				clip-path: polygon(0 30%, 11% 26%, 9% 39%);
+			}
+			&-item:nth-child(22) {
+				clip-path: polygon(0 30%, 11% 26%, 0 24%);
+			}
+			&-item:nth-child(23) {
+				clip-path: polygon(20% 34%, 11% 26%, 9% 39%);
+			}
+			&-item:nth-child(24) {
+				clip-path: polygon(20% 34%, 17% 45%, 9% 39%);
+			}
+		}
+	}
+	.scale-s {
+		animation: scaleAnim 1s 0.5s alternate-reverse infinite;
+	}
+	.scale-sB {
+		animation: scaleAnimB 1s 0.5s alternate-reverse infinite;
+	}
+	.scaleAnimAfter {
+		animation: scaleAnimAfter 1s 0.5s alternate-reverse infinite;
+	}
+	.scaleAnimAfterB {
+		animation: scaleAnimAfterB 1s 0.5s alternate-reverse infinite;
+	}
+
+	&__text {
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		text-transform: uppercase;
+
+		&-versus {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 5rem;
+		}
+		&--first {
+			font-size: 10rem;
+			padding: 20px 0 0 20px;
+			transform: translateX(-100vh);
+			transition: transform 1s;
+		}
+		&--second {
+			font-size: 6rem;
+			font-weight: bold;
+			text-align: center;
+			text-transform: none;
+			-webkit-text-fill-color: transparent;
+			-webkit-text-stroke-width: 1px;
+			stroke-dasharray: 500;
+			stroke-dashoffset: 0;
+		}
+		&--third {
+			position: absolute;
+			font-size: 10rem;
+			right: 0;
+			bottom: 0;
+			padding: 0 20px 20px 0;
+			transform: translateX(100vh);
+			transition: transform 1s;
+		}
+	}
+	.textAnimS {
+		animation: dash 2s ease-out forwards;
+	}
+	.textAnimS-r {
+		animation: dash-r 2s ease-in forwards;
+	}
+}
+
+.example {
+	scroll-padding: 2em;
+	width: 100%;
+	height: 100vh;
+	background-color: aqua;
+}
+.example2 {
+	scroll-padding: 2em;
+	width: 100%;
+	height: 100vh;
+}
+.example4 {
+	width: 100%;
+	height: 100vh;
+}
