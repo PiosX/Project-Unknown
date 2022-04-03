@@ -22,6 +22,16 @@ const pathS5 = document.querySelector(".path-s-item:nth-child(5)");
 const pathS6 = document.querySelector(".path-s-item:nth-child(6)");
 const pathS7 = document.querySelector(".path-s-item:nth-child(7)");
 
+const pathM1 = document.querySelector(".path-m-item:nth-child(1)");
+const pathM2 = document.querySelector(".path-m-item:nth-child(2)");
+const pathM3 = document.querySelector(".path-m-item:nth-child(3)");
+const pathM4 = document.querySelector(".path-m-item:nth-child(4)");
+const pathM5 = document.querySelector(".path-m-item:nth-child(5)");
+const pathM6 = document.querySelector(".path-m-item:nth-child(6)");
+const pathM7 = document.querySelector(".path-m-item:nth-child(7)");
+const pathM8 = document.querySelector(".path-m-item:nth-child(8)");
+const pathM9 = document.querySelector(".path-m-item:nth-child(9)");
+
 const options = {
 	threshold: 0.75,
 };
@@ -75,6 +85,15 @@ const scrollHeader = () => {
 	const scrollPathS3 = Math.floor((value / toScroll) * 65 - 95 - 125);
 	const scrollPathS5 = Math.floor((value / toScroll) * 65 - 95 - 130);
 	const scrollPathS7 = Math.floor((value / toScroll) * 65 - 95 - 140);
+	const scrollPathM1 = Math.floor((value / toScroll) * 65 - 95 - 153);
+	const scrollPathM2 = Math.floor((value / toScroll) * 65 - 95 - 158);
+	const scrollPathM3 = Math.floor((value / toScroll) * 65 - 95 - 162);
+	const scrollPathM4 = Math.floor((value / toScroll) * 65 - 95 - 162);
+	const scrollPathM5 = Math.floor((value / toScroll) * 65 - 95 - 167);
+	const scrollPathM6 = Math.floor((value / toScroll) * 65 - 95 - 183);
+	const scrollPathM7 = Math.floor((value / toScroll) * 65 - 95 - 240);
+	const scrollPathM8 = Math.floor((value / toScroll) * 65 - 95 - 263);
+	const scrollPathM9 = Math.floor((value / toScroll) * 65 - 95 - 273);
 	if (scrollPath1 <= 85) {
 		path1.style.height = `${scrollPath1}vh`;
 	} else if (scrollPath1 > 85) {
@@ -107,10 +126,10 @@ const scrollHeader = () => {
 	} else if (scrollPathS2 > 15) {
 		pathS2.style.transform = `scaleX(1)`;
 	}
-	if (scrollPathS3 * 10 <= 50) {
+	if (scrollPathS3 * 10 <= 50 && scrollPathS3 * 10 > 0) {
 		pathS3.style.height = `${scrollPathS3 * 10}%`;
 		pathS4.style.height = `${scrollPathS3 * 10}%`;
-	} else if (scrollPathS3 * 10 < 0) {
+	} else if (scrollPathS3 * 10 < 0 || scrollPathS3 < 0) {
 		pathS3.style.height = `0`;
 		pathS4.style.height = `0`;
 	} else if (scrollPathS3 * 10 > 50) {
@@ -133,6 +152,70 @@ const scrollHeader = () => {
 		pathS7.style.height = `0`;
 	} else if (scrollPathS5 > 25) {
 		pathS7.style.height = `25%`;
+	}
+
+	if (scrollPathM1 * 3 <= 25 && scrollPathM1 * 3 > 0) {
+		pathM1.style.height = `${scrollPathM1 * 3}vh`;
+	} else if (scrollPathM1 * 3 < 0) {
+		pathM1.style.height = `0`;
+	} else if (scrollPathM1 * 3 > 25) {
+		pathM1.style.height = `25vh`;
+	}
+	if (scrollPathM2 * 2 <= 10 && scrollPathM2 * 2 > 0) {
+		pathM2.style.transform = `scaleX(${(scrollPathM2 * 2) / 10})`;
+	} else if (scrollPathM2 * 2 < 0) {
+		pathM2.style.transform = `scaleX(0)`;
+	} else if (scrollPathM2 * 2 > 30 || scrollPathM2 * 2 > 10) {
+		pathM2.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathM3 * 2 <= 10 && scrollPathM3 * 2 > 0) {
+		pathM3.style.transform = `scaleX(${(scrollPathM3 * 2) / 10})`;
+	} else if (scrollPathM3 * 2 < 0) {
+		pathM3.style.transform = `scaleX(0)`;
+	} else if (scrollPathM3 * 2 > 40 || scrollPathM3 * 2 > 10) {
+		pathM3.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathM4 * 3.5 <= 70 && scrollPathM4 * 3.5 > 0) {
+		pathM4.style.height = `${scrollPathM4 * 3.5}vh`;
+	} else if (scrollPathM4 * 3.5 < 0) {
+		pathM4.style.height = `0`;
+	} else if (scrollPathM4 * 3.5 > 70) {
+		pathM4.style.height = `70vh`;
+	}
+	if (scrollPathM5 * 3.5 <= 170 && scrollPathM5 * 3.5 > 0) {
+		pathM5.style.height = `${scrollPathM5 * 3.5}vh`;
+	} else if (scrollPathM5 * 3.5 < 0) {
+		pathM5.style.height = `0`;
+	} else if (scrollPathM5 * 3.5 > 170) {
+		pathM5.style.height = `170vh`;
+	}
+	if (scrollPathM6 * 3.5 <= 200 && scrollPathM6 * 3.5 > 0) {
+		pathM6.style.height = `${scrollPathM6 * 3.5}vh`;
+	} else if (scrollPathM6 * 3.5 < 0) {
+		pathM6.style.height = `0`;
+	} else if (scrollPathM6 * 3.5 > 200) {
+		pathM6.style.height = `200vh`;
+	}
+	if (scrollPathM7 * 3.5 <= 75 && scrollPathM7 * 3.5 > 0) {
+		pathM7.style.height = `${scrollPathM7 * 3.5}vh`;
+	} else if (scrollPathM7 * 3.5 < 0) {
+		pathM7.style.height = `0`;
+	} else if (scrollPathM7 * 3.5 > 75) {
+		pathM7.style.height = `75vh`;
+	}
+	if (scrollPathM8 <= 10 && scrollPathM8 > 0) {
+		pathM8.style.transform = `scaleX(${scrollPathM8 / 10})`;
+	} else if (scrollPathM8 < 0) {
+		pathM8.style.transform = `scaleX(0)`;
+	} else if (scrollPathM8 > 30 || scrollPathM8 > 10) {
+		pathM8.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathM9 * 1.8 <= 23 && scrollPathM9 * 1.8 > 0) {
+		pathM9.style.height = `${scrollPathM9 * 1.8}vh`;
+	} else if (scrollPathM9 * 1.8 < 0) {
+		pathM9.style.height = `0`;
+	} else if (scrollPathM9 * 1.8 > 23) {
+		pathM9.style.height = `23vh`;
 	}
 };
 

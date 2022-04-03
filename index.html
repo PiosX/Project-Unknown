@@ -25,7 +25,11 @@
                 <div class="path-item"></div>
                 <div class="path-item"></div>
             </div>
+
             <div class="header__box">
+                <!-- <video autoplay muted loop class="header__vid">
+                    <source src="/dist/img/header_vid.mp4" type="video/mp4">
+                </video> -->
                 <div class="header__box-item"></div>
                 <div class="header__box-item"></div>
                 <div class="header__box-item"></div>
@@ -66,6 +70,8 @@
                 <div class="header__box-item"></div>
                 <div class="header__box-item"></div>
                 <div class="header__box-item"></div>
+
+
                 <div class="header__box-item item-anim"></div>
                 <div class="header__box-item"></div>
                 <div class="header__box-item"></div>
@@ -186,9 +192,50 @@
                 <div class="split__box--second-item"></div>
             </div>
         </section>
-        <section class="example4">
+        <section class="map">
+            <h2 class="map-title">What's Next?</h2>
+            <div class="path-m">
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+                <div class="path-m-item"></div>
+            </div>
+            <div class="map-box map-box--first">
+                <div class="map-box--first-img"></div>
+                <div class="map-box--first-content"></div>
+            </div>
+            <div class="map-box map-box--second">
+                <div class="map-box--second-img"></div>
+                <div class="map-box--second-content"></div>
+            </div>
+            <div class="map-box map-box--third">
+                <div class="map-box--third-img"></div>
+                <div class="map-box--third-content"></div>
+            </div>
         </section>
-        <section class="example"></section>
+        <section class="words">
+            <div class="words-stroke">
+                <div class="words-stroke--first">
+                    <h2 class="words-stroke--first-text">Find Find Find Find Find&nbsp;</h2>
+                </div>
+                <div class="words-stroke--second">
+                    <h2 class="words-stroke--second-text">Find Find Find Find Find&nbsp;</h2>
+                </div>
+            </div>
+            <div class="words-line">
+                <div class="words-line--first">
+                    <h2 class="words-line--first-text">Explore Explore Explore&nbsp;</h2>
+                </div>
+                <div class="words-line--second">
+                    <h2 class="words-line--second-text">Explore Explore Explore&nbsp;</h2>
+                </div>
+            </div>
+        </section>
         <section class="example2"></section>
     </main>
     
@@ -207,9 +254,9 @@
     </script>
     <script type="text/javascript" src="/dist/js/main.min.js"></script>
     <script type="text/javascript">
-        var controller = new ScrollMagic.Controller();
+        let controller = new ScrollMagic.Controller();
 
-        var scene = new ScrollMagic.Scene({ triggerElement: ".header", duration: 6 * window.innerHeight, triggerHook: 0 })
+        let scene = new ScrollMagic.Scene({ triggerElement: ".header", duration: 6 * window.innerHeight, triggerHook: 0 })
             .setPin(".header", { pushFollowers: true })
             .addTo(controller);
 
