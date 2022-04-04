@@ -57,7 +57,7 @@ body {
 			left: 50%;
 			width: 43%;
 			height: 2px;
-			transform-origin: 100% 50%;
+			transform-origin: 100%;
 			transform: scaleX(0);
 		}
 		&-item:nth-child(3) {
@@ -729,8 +729,120 @@ body {
 		}
 	}
 }
-.example2 {
-	scroll-padding: 2em;
+.past {
+	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 190vh;
+	background-color: #000;
+	padding-top: 20vh;
+	.path-p {
+		&-item {
+			position: absolute;
+			background-color: #fff;
+			z-index: 2;
+		}
+		&-item:nth-child(1) {
+			top: 0;
+			left: 50%;
+			width: 2px;
+			height: 0;
+		}
+		&-item:nth-child(2) {
+			top: 20vh;
+			left: 0;
+			width: 50%;
+			height: 2px;
+			transform-origin: 100%;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(3) {
+			top: 60vh;
+			right: 0;
+			width: 50%;
+			height: 2px;
+			transform-origin: 0;
+			transform: scaleX(0);
+		}
+		&-item:nth-child(4) {
+			top: 60vh;
+			left: 50%;
+			width: 2px;
+			height: 20vh;
+		}
+	}
+	&__date {
+		&-item {
+			position: absolute;
+			font-size: 2rem;
+			color: white;
+		}
+		&-item:nth-child(1) {
+			top: 17.5vh;
+			left: 8%;
+		}
+		&-item:nth-child(2) {
+			top: 17.5vh;
+			left: 26%;
+		}
+		&-item:nth-child(3) {
+			top: 60.5vh;
+			left: 70%;
+		}
+		&-item:nth-child(4) {
+			top: 60.5vh;
+			left: 79%;
+		}
+	}
+	&__header {
+		font-size: 11rem;
+		text-transform: uppercase;
+		color: #fff;
+		&--first {
+			text-align: left;
+		}
+		&--second {
+			text-align: center;
+		}
+		&--third {
+			text-align: right;
+		}
+	}
+	&__img {
+		width: 80%;
+		height: 80vh;
+		margin: 0 auto;
+		margin-top: 25vh;
+		background-image: url("/dist/img/greece_now.jpg");
+		background-size: cover;
+		background-position: center;
+		clip-path: polygon(
+			60% 0%,
+			53% 2%,
+			46% 8%,
+			36% 10%,
+			27% 7%,
+			16% 13%,
+			5% 26%,
+			0 44%,
+			6% 56%,
+			3% 76%,
+			12% 80%,
+			15% 94%,
+			26% 94%,
+			39% 99%,
+			52% 93%,
+			62% 100%,
+			67% 94%,
+			74% 98%,
+			82% 87%,
+			89% 90%,
+			97% 84%,
+			100% 62%,
+			94% 50%,
+			97% 31%,
+			89% 19%,
+			78% 16%,
+			75% 6%
+		);
+	}
 }

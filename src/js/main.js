@@ -32,6 +32,11 @@ const pathM7 = document.querySelector(".path-m-item:nth-child(7)");
 const pathM8 = document.querySelector(".path-m-item:nth-child(8)");
 const pathM9 = document.querySelector(".path-m-item:nth-child(9)");
 
+const pathP1 = document.querySelector(".path-p-item:nth-child(1)");
+const pathP2 = document.querySelector(".path-p-item:nth-child(2)");
+const pathP3 = document.querySelector(".path-p-item:nth-child(3)");
+const pathP4 = document.querySelector(".path-p-item:nth-child(4)");
+
 const options = {
 	threshold: 0.75,
 };
@@ -94,6 +99,10 @@ const scrollHeader = () => {
 	const scrollPathM7 = Math.floor((value / toScroll) * 65 - 95 - 240);
 	const scrollPathM8 = Math.floor((value / toScroll) * 65 - 95 - 263);
 	const scrollPathM9 = Math.floor((value / toScroll) * 65 - 95 - 273);
+	const scrollPathP1 = Math.floor((value / toScroll) * 65 - 95 - 290);
+	const scrollPathP2 = Math.floor((value / toScroll) * 65 - 95 - 300);
+	const scrollPathP3 = Math.floor((value / toScroll) * 65 - 95 - 305);
+	const scrollPathP4 = Math.floor((value / toScroll) * 65 - 95 - 305);
 	if (scrollPath1 <= 85) {
 		path1.style.height = `${scrollPath1}vh`;
 	} else if (scrollPath1 > 85) {
@@ -103,7 +112,7 @@ const scrollHeader = () => {
 		path2.style.transform = `scaleX(${scrollPath2 / 100})`;
 	} else if (scrollPath2 < 0) {
 		path2.style.transform = `scaleX(0)`;
-	} else {
+	} else if (scrollPath2 > 100) {
 		path2.style.transform = `scaleX(1)`;
 	}
 	if (scrollPath3 <= 5 && scrollPath3 > 0) {
@@ -216,6 +225,34 @@ const scrollHeader = () => {
 		pathM9.style.height = `0`;
 	} else if (scrollPathM9 * 1.8 > 23) {
 		pathM9.style.height = `23vh`;
+	}
+	if (scrollPathP1 * 1.8 <= 20 && scrollPathP1 * 1.8 > 0) {
+		pathP1.style.height = `${scrollPathP1 * 1.8}vh`;
+	} else if (scrollPathP1 * 1.8 < 0) {
+		pathP1.style.height = `0`;
+	} else if (scrollPathP1 * 1.8 > 20) {
+		pathP1.style.height = `20vh`;
+	}
+	if (scrollPathP2 * 2 <= 10 && scrollPathP2 * 2 > 0) {
+		pathP2.style.transform = `scaleX(${(scrollPathP2 * 2) / 10})`;
+	} else if (scrollPathP2 * 2 < 0) {
+		pathP2.style.transform = `scaleX(0)`;
+	} else if (scrollPathP2 * 2 > 20 || scrollPathP2 * 2 > 10) {
+		pathP2.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathP3 * 2 <= 10 && scrollPathP3 * 2 > 0) {
+		pathP3.style.transform = `scaleX(${(scrollPathP3 * 2) / 10})`;
+	} else if (scrollPathP3 * 2 < 0) {
+		pathP3.style.transform = `scaleX(0)`;
+	} else if (scrollPathP3 * 2 > 20 || scrollPathP3 * 2 > 10) {
+		pathP3.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathP4 <= 20 && scrollPathP4 > 0) {
+		pathP4.style.height = `${scrollPathP4}vh`;
+	} else if (scrollPathP4 < 0) {
+		pathP4.style.height = `0`;
+	} else if (scrollPathP4 > 20) {
+		pathP4.style.height = `20vh`;
 	}
 };
 
