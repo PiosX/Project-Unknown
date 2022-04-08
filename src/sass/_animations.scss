@@ -84,3 +84,21 @@
 		transform: translateX(-100%);
 	}
 }
+
+@keyframes cursorRotation {
+	0% {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes hidePastEl {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

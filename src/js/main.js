@@ -9,6 +9,7 @@ const splitBoxes = document.querySelectorAll(".split__box");
 const splitText = document.querySelector(".split__text--first");
 const splitTextC = document.querySelectorAll(".split__text--second");
 const splitTextB = document.querySelector(".split__text--third");
+const pastItems = document.querySelectorAll(".past__img-past");
 
 const path1 = document.querySelector(".path-item:nth-child(1)");
 const path2 = document.querySelector(".path-item:nth-child(2)");
@@ -46,15 +47,20 @@ const options = {
 	threshold: 0.75,
 };
 
-let randomPosX = [];
-let randomPosY = [];
 let interval = 1;
 let intervalS = 1;
 let clicked = 0;
-let clickedB = 0;
-let itemCount = 1;
-let itemCountB = 1;
 let windowScroll = 0;
+let innerCursor = document.querySelector(".inner-cursor");
+let images = Array.from(document.querySelectorAll(".img"));
+
+const moveCursor = (e) => {
+	let x = e.clientX;
+	let y = e.clientY;
+
+	innerCursor.style.left = `${x}px`;
+	innerCursor.style.top = `${y}px`;
+};
 
 const changePosition = () => {
 	let j = 0;
@@ -411,6 +417,15 @@ const chooseSplitB = () => {
 	}
 };
 
+document.addEventListener("mousemove", moveCursor);
+images.forEach((image) => {
+	image.addEventListener("mouseover", () => {
+		innerCursor.classList.add("grow");
+	});
+	image.addEventListener("mouseleave", () => {
+		innerCursor.classList.remove("grow");
+	});
+});
 document.addEventListener("DOMContentLoaded", changePosition);
 window.addEventListener("scroll", scrollHeader);
 window.onbeforeunload = function () {
@@ -421,3 +436,8 @@ splitItemB.forEach((item) => item.addEventListener("click", chooseSplitB));
 window.addEventListener("scroll", scrollSplitText);
 splitItem.forEach((box) => box.addEventListener("click", hideSplitText));
 splitItemB.forEach((box) => box.addEventListener("click", hideSplitText));
+pastItems.forEach((item) => {
+	item.addEventListener("mouseover", () => {
+		item.classList.add("hidePastEl");
+	});
+});

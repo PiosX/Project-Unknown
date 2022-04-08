@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	cursor: none;
 }
 
 html,
@@ -29,6 +30,30 @@ body {
 // 		z-index: 1;
 // 	}
 // }
+
+.inner-cursor {
+	position: fixed;
+	left: -50px;
+	top: -50px;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	mix-blend-mode: difference;
+	clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+	// border-radius: 50%;
+	pointer-events: none;
+	transition: width 0.2s, height 0.2s, top 0.1s, left 0.1s;
+	transform-origin: center center;
+	animation: cursorRotation 5s linear infinite;
+	z-index: 10;
+}
+
+.inner-cursor.grow {
+	width: 90px;
+	height: 90px;
+	transition: width 0.5s, height 0.5s;
+}
 
 // HEADER SECTION
 .header {
@@ -66,15 +91,6 @@ body {
 			width: 2px;
 			height: 0;
 		}
-	}
-
-	&__vid {
-		object-fit: cover;
-		width: 100vw;
-		height: 100vh;
-		position: absolute;
-		top: 0;
-		left: 0;
 	}
 
 	&__box {
@@ -1247,51 +1263,211 @@ body {
 		}
 	}
 	&__img {
+		position: relative;
 		width: 80%;
 		height: 80vh;
 		margin: 0 auto;
 		margin-top: 25vh;
-		background-image: url("/dist/img/greece_now.jpg");
+		background: url("/dist/img/greece_before.jpg");
 		background-size: cover;
 		background-position: center;
-		clip-path: polygon(
-			60% 0%,
-			53% 2%,
-			46% 8%,
-			36% 10%,
-			27% 7%,
-			16% 13%,
-			5% 26%,
-			0 44%,
-			6% 56%,
-			3% 76%,
-			12% 80%,
-			15% 94%,
-			26% 94%,
-			39% 99%,
-			52% 93%,
-			62% 100%,
-			67% 94%,
-			74% 98%,
-			82% 87%,
-			89% 90%,
-			97% 84%,
-			100% 62%,
-			94% 50%,
-			97% 31%,
-			89% 19%,
-			78% 16%,
-			75% 6%
-		);
+
+		&-past {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url("/dist/img/greece_now.jpg");
+			background-size: cover;
+			background-position: 50% 30%;
+		}
+		.hidePastEl {
+			animation: hidePastEl 1s linear forwards;
+		}
+		&-past:nth-child(1) {
+			clip-path: polygon(24% 0, 0 0, 12% 17%);
+		}
+		&-past:nth-child(2) {
+			clip-path: polygon(0 32%, 0 0, 12% 17%);
+		}
+		&-past:nth-child(3) {
+			clip-path: polygon(0 32%, 20% 41%, 12% 17%);
+		}
+		&-past:nth-child(4) {
+			clip-path: polygon(0 32%, 20% 41%, 0 57%);
+		}
+		&-past:nth-child(5) {
+			clip-path: polygon(10% 71%, 20% 41%, 0 57%);
+		}
+		&-past:nth-child(6) {
+			clip-path: polygon(10% 71%, 0 100%, 0 57%);
+		}
+		&-past:nth-child(7) {
+			clip-path: polygon(10% 71%, 0 100%, 15% 100%);
+		}
+		&-past:nth-child(8) {
+			clip-path: polygon(10% 71%, 31% 77%, 15% 100%);
+		}
+		&-past:nth-child(9) {
+			clip-path: polygon(38% 100%, 31% 77%, 15% 100%);
+		}
+		&-past:nth-child(10) {
+			clip-path: polygon(38% 100%, 31% 77%, 53% 85%);
+		}
+		&-past:nth-child(11) {
+			clip-path: polygon(38% 100%, 62% 100%, 53% 85%);
+		}
+		&-past:nth-child(12) {
+			clip-path: polygon(74% 80%, 62% 100%, 53% 85%);
+		}
+		&-past:nth-child(13) {
+			clip-path: polygon(74% 80%, 62% 100%, 84% 100%);
+		}
+		&-past:nth-child(14) {
+			clip-path: polygon(74% 80%, 100% 83%, 84% 100%);
+		}
+		&-past:nth-child(15) {
+			clip-path: polygon(100% 100%, 100% 83%, 84% 100%);
+		}
+		&-past:nth-child(16) {
+			clip-path: polygon(100% 62%, 100% 83%, 74% 80%);
+		}
+		&-past:nth-child(17) {
+			clip-path: polygon(100% 62%, 86% 54%, 74% 80%);
+		}
+		&-past:nth-child(18) {
+			clip-path: polygon(100% 62%, 86% 54%, 100% 29%);
+		}
+		&-past:nth-child(19) {
+			clip-path: polygon(86% 24%, 86% 54%, 100% 29%);
+		}
+		&-past:nth-child(20) {
+			clip-path: polygon(86% 24%, 100% 0, 100% 29%);
+		}
+		&-past:nth-child(21) {
+			clip-path: polygon(86% 24%, 100% 0, 83% 0);
+		}
+		&-past:nth-child(22) {
+			clip-path: polygon(86% 24%, 71% 19%, 83% 0);
+		}
+		&-past:nth-child(23) {
+			clip-path: polygon(65% 0, 71% 19%, 83% 0);
+		}
+		&-past:nth-child(24) {
+			clip-path: polygon(65% 0, 71% 19%, 52% 15%);
+		}
+		&-past:nth-child(25) {
+			clip-path: polygon(65% 0, 38% 0, 52% 15%);
+		}
+		&-past:nth-child(26) {
+			clip-path: polygon(30% 15%, 38% 0, 52% 15%);
+		}
+		&-past:nth-child(27) {
+			clip-path: polygon(30% 15%, 38% 0, 24% 0);
+		}
+		&-past:nth-child(28) {
+			clip-path: polygon(30% 15%, 12% 17%, 24% 0);
+		}
+		&-past:nth-child(29) {
+			clip-path: polygon(30% 15%, 12% 17%, 20% 41%);
+		}
+		&-past:nth-child(30) {
+			clip-path: polygon(30% 15%, 38% 39%, 20% 41%);
+		}
+		&-past:nth-child(31) {
+			clip-path: polygon(30% 15%, 38% 39%, 52% 15%);
+		}
+		&-past:nth-child(32) {
+			clip-path: polygon(60% 41%, 38% 39%, 52% 15%);
+		}
+		&-past:nth-child(33) {
+			clip-path: polygon(60% 41%, 71% 19%, 52% 15%);
+		}
+		&-past:nth-child(34) {
+			clip-path: polygon(60% 41%, 71% 19%, 77% 41%);
+		}
+		&-past:nth-child(35) {
+			clip-path: polygon(86% 24%, 71% 19%, 77% 41%);
+		}
+		&-past:nth-child(36) {
+			clip-path: polygon(86% 24%, 86% 54%, 77% 41%);
+		}
+		&-past:nth-child(37) {
+			clip-path: polygon(74% 80%, 86% 54%, 77% 41%);
+		}
+		&-past:nth-child(38) {
+			clip-path: polygon(74% 80%, 62% 63%, 77% 41%);
+		}
+		&-past:nth-child(39) {
+			clip-path: polygon(74% 80%, 62% 63%, 53% 85%);
+		}
+		&-past:nth-child(40) {
+			clip-path: polygon(46% 62%, 62% 63%, 53% 85%);
+		}
+		&-past:nth-child(41) {
+			clip-path: polygon(46% 62%, 31% 77%, 53% 85%);
+		}
+		&-past:nth-child(42) {
+			clip-path: polygon(46% 62%, 31% 77%, 27% 54%);
+		}
+		&-past:nth-child(43) {
+			clip-path: polygon(10% 71%, 31% 77%, 27% 54%);
+		}
+		&-past:nth-child(44) {
+			clip-path: polygon(10% 71%, 20% 41%, 27% 54%);
+		}
+		&-past:nth-child(45) {
+			clip-path: polygon(38% 39%, 20% 41%, 27% 54%);
+		}
+		&-past:nth-child(46) {
+			clip-path: polygon(38% 39%, 46% 62%, 27% 54%);
+		}
+		&-past:nth-child(47) {
+			clip-path: polygon(38% 39%, 46% 62%, 60% 41%);
+		}
+		&-past:nth-child(48) {
+			clip-path: polygon(62% 63%, 46% 62%, 60% 41%);
+		}
+		&-past:nth-child(49) {
+			clip-path: polygon(62% 63%, 77% 41%, 60% 41%);
+		}
 	}
 }
 
 // ENDING SECTION
 .ending {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	height: 200vh;
+	height: 100vh;
+	color: #fff;
 	background-color: #000;
+	text-transform: uppercase;
+	&__text1,
+	&__text2,
+	&__text3,
+	&__text4 {
+		padding-bottom: 3vh;
+	}
+	&__text1 {
+		font-size: 12rem;
+	}
+	&__text2 {
+		font-size: 12rem;
+		text-align: center;
+	}
+	&__text3 {
+		font-size: 12rem;
+	}
+	&__text4 {
+		font-size: 12rem;
+		text-align: right;
+	}
+	&__text5 {
+		font-size: 8rem;
+		text-align: center;
+		margin-top: 15vh;
+	}
 }
 
 // FOOTER
