@@ -1,6 +1,7 @@
 const glassItem = document.querySelectorAll(".header__box-item");
 const split = document.querySelector(".split");
 const header = document.querySelector(".header");
+const h1Mask = document.querySelector(".header__title-mask");
 const splitItem = document.querySelectorAll(".split__box--first-item");
 const splitItemB = document.querySelectorAll(".split__box--second-item");
 const splitBox = document.querySelector(".split__box--first");
@@ -10,6 +11,7 @@ const splitText = document.querySelector(".split__text--first");
 const splitTextC = document.querySelectorAll(".split__text--second");
 const splitTextB = document.querySelector(".split__text--third");
 const pastItems = document.querySelectorAll(".past__img-past");
+const footerYear = document.querySelector(".footer__year");
 
 const path1 = document.querySelector(".path-item:nth-child(1)");
 const path2 = document.querySelector(".path-item:nth-child(2)");
@@ -42,6 +44,20 @@ const pathP1 = document.querySelector(".path-p-item:nth-child(1)");
 const pathP2 = document.querySelector(".path-p-item:nth-child(2)");
 const pathP3 = document.querySelector(".path-p-item:nth-child(3)");
 const pathP4 = document.querySelector(".path-p-item:nth-child(4)");
+const pathP5 = document.querySelector(".path-p-item:nth-child(5)");
+const pathP6 = document.querySelector(".path-p-item:nth-child(6)");
+const pathP7 = document.querySelector(".path-p-item:nth-child(7)");
+const pathP8 = document.querySelector(".path-p-item:nth-child(8)");
+const pathP9 = document.querySelector(".path-p-item:nth-child(9)");
+const pathP10 = document.querySelector(".path-p-item:nth-child(10)");
+const pathP11 = document.querySelector(".path-p-item:nth-child(11)");
+const pathP12 = document.querySelector(".path-p-item:nth-child(12)");
+
+const hText1 = document.querySelector(".header__thought-item:nth-child(1)");
+const hText2 = document.querySelector(".header__thought-item:nth-child(2)");
+const hText3 = document.querySelector(".header__thought-item:nth-child(3)");
+const hText4 = document.querySelector(".header__thought-item:nth-child(4)");
+const hText5 = document.querySelector(".header__thought-item:nth-child(5)");
 
 const options = {
 	threshold: 0.75,
@@ -62,36 +78,36 @@ const moveCursor = (e) => {
 	innerCursor.style.top = `${y}px`;
 };
 
-const changePosition = () => {
-	let j = 0;
-	glassItem.forEach((item) => {
-		if (!item.classList.contains("item-anim")) {
-			item.style.opacity = 0;
-		}
-		j++;
-	});
-};
+// const changePosition = () => {
+// 	let j = 0;
+// 	glassItem.forEach((item) => {
+// 		if (!item.classList.contains("item-anim")) {
+// 			item.style.opacity = 0;
+// 		}
+// 		j++;
+// 	});
+// };
 
 const scrollHeader = () => {
 	const value = window.scrollY;
 	const height = window.innerHeight;
-	for (let i = 0; i < 85; i++) {
-		if (height < value && i % 5 == 0) {
-			glassItem[i].classList.add("item-pos-anim");
-		}
-		if (2 * height < value && i % 4 == 0) {
-			glassItem[i].classList.add("item-pos-anim");
-		}
-		if (3 * height < value && i % 3 == 0) {
-			glassItem[i].classList.add("item-pos-anim");
-		}
-		if (4 * height < value && i % 2 == 0) {
-			glassItem[i].classList.add("item-pos-anim");
-		}
-		if (5 * height < value && i % 1 == 0) {
-			glassItem[i].classList.add("item-pos-anim");
-		}
-	}
+	// for (let i = 0; i < 85; i++) {
+	// 	if (height < value && i % 5 == 0) {
+	// 		glassItem[i].classList.add("item-pos-anim");
+	// 	}
+	// 	if (2 * height < value && i % 4 == 0) {
+	// 		glassItem[i].classList.add("item-pos-anim");
+	// 	}
+	// 	if (3 * height < value && i % 3 == 0) {
+	// 		glassItem[i].classList.add("item-pos-anim");
+	// 	}
+	// 	if (4 * height < value && i % 2 == 0) {
+	// 		glassItem[i].classList.add("item-pos-anim");
+	// 	}
+	// 	if (5 * height < value && i % 1 == 0) {
+	// 		glassItem[i].classList.add("item-pos-anim");
+	// 	}
+	// }
 	const toScroll = 3 * header.clientHeight - window.innerHeight;
 	const scrollPath1 = Math.floor((value / toScroll) * 65);
 	const scrollPath2 = Math.floor((value / toScroll) * 65 - 85);
@@ -119,6 +135,47 @@ const scrollHeader = () => {
 	const scrollPathP2 = Math.floor((value / toScroll) * 65 - 95 - 300);
 	const scrollPathP3 = Math.floor((value / toScroll) * 65 - 95 - 305);
 	const scrollPathP4 = Math.floor((value / toScroll) * 65 - 95 - 305);
+	const scrollPathP5 = Math.floor((value / toScroll) * 65 - 95 - 335);
+	const scrollPathP6 = Math.floor((value / toScroll) * 65 - 95 - 345);
+	const scrollPathP7 = Math.floor((value / toScroll) * 65 - 95 - 349);
+	const scrollPathP8 = Math.floor((value / toScroll) * 65 - 95 - 358);
+	const scrollPathP9 = Math.floor((value / toScroll) * 65 - 95 - 363);
+	const scrollPathP10 = Math.floor((value / toScroll) * 65 - 95 - 369);
+	const scrollPathP11 = Math.floor((value / toScroll) * 65 - 95 - 375);
+	const scrollPathP12 = Math.floor((value / toScroll) * 65 - 95 - 377);
+	const scrollH1Mask = Math.floor((value / toScroll) * 65);
+	const scrollTextH = Math.floor((value / toScroll) * 65);
+
+	if (scrollTextH >= 10) {
+		hText1.style.transform = `translateX(0)`;
+	} else {
+		hText1.style.transform = `translateX(500px)`;
+	}
+	if (scrollTextH >= 25) {
+		hText2.style.transform = `translateX(0)`;
+	} else {
+		hText2.style.transform = `translateX(500px)`;
+	}
+	if (scrollTextH >= 40) {
+		hText3.style.transform = `translateX(0)`;
+	} else {
+		hText3.style.transform = `translateX(500px)`;
+	}
+	if (scrollTextH >= 55) {
+		hText4.style.transform = `translateX(0)`;
+	} else {
+		hText4.style.transform = `translateX(500px)`;
+	}
+	if (scrollTextH >= 70) {
+		hText5.style.transform = `translateX(0)`;
+	} else {
+		hText5.style.transform = `translateX(500px)`;
+	}
+	if (scrollH1Mask) {
+		h1Mask.style.opacity = `${scrollH1Mask / 200}`;
+	} else {
+		h1Mask.style.opacity = `0`;
+	}
 	if (scrollPath1 <= 85) {
 		path1.style.height = `${scrollPath1}vh`;
 	} else if (scrollPath1 > 85) {
@@ -306,6 +363,62 @@ const scrollHeader = () => {
 	} else if (scrollPathP4 > 20) {
 		pathP4.style.height = `20vh`;
 	}
+	if (scrollPathP5 <= 10 && scrollPathP5 > 0) {
+		pathP5.style.height = `${scrollPathP5}vh`;
+	} else if (scrollPathP5 < 0) {
+		pathP5.style.height = `0`;
+	} else if (scrollPathP5 > 10) {
+		pathP5.style.height = `10vh`;
+	}
+	if (scrollPathP6 * 2 <= 10 && scrollPathP6 * 2 > 0) {
+		pathP6.style.transform = `scaleX(${(scrollPathP6 * 2) / 10})`;
+	} else if (scrollPathP6 * 2 < 0) {
+		pathP6.style.transform = `scaleX(0)`;
+	} else if (scrollPathP6 * 2 > 35 || scrollPathP6 * 2 > 10) {
+		pathP6.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathP7 * 1.3 <= 13 && scrollPathP7 * 1.3 > 0) {
+		pathP7.style.height = `${scrollPathP7 * 1.3}vh`;
+	} else if (scrollPathP7 * 1.3 < 0) {
+		pathP7.style.height = `0`;
+	} else if (scrollPathP7 * 1.3 > 13) {
+		pathP7.style.height = `13vh`;
+	}
+	if (scrollPathP8 <= 5 && scrollPathP8 > 0) {
+		pathP8.style.height = `${scrollPathP8}vh`;
+	} else if (scrollPathP8 < 0) {
+		pathP8.style.height = `0`;
+	} else if (scrollPathP8 > 5) {
+		pathP8.style.height = `5vh`;
+	}
+	if (scrollPathP9 * 3.5 <= 24 && scrollPathP9 * 3.5 > 0) {
+		pathP9.style.height = `${scrollPathP9 * 3.5}vh`;
+	} else if (scrollPathP9 * 3.5 < 0) {
+		pathP9.style.height = `0`;
+	} else if (scrollPathP9 * 3.5 > 24) {
+		pathP9.style.height = `24.1vh`;
+	}
+	if (scrollPathP10 * 4 <= 10 && scrollPathP10 * 4 > 0) {
+		pathP10.style.transform = `scaleX(${(scrollPathP10 * 4) / 10})`;
+	} else if (scrollPathP10 * 4 < 0) {
+		pathP10.style.transform = `scaleX(0)`;
+	} else if (scrollPathP10 * 4 > 40 || scrollPathP10 * 4 > 10) {
+		pathP10.style.transform = `scaleX(1)`;
+	}
+	if (scrollPathP11 * 3.5 <= 6 && scrollPathP11 * 3.5 > 0) {
+		pathP11.style.height = `${scrollPathP11 * 3.5}vh`;
+	} else if (scrollPathP11 * 3.5 < 0) {
+		pathP11.style.height = `0`;
+	} else if (scrollPathP11 * 3.5 > 6) {
+		pathP11.style.height = `6vh`;
+	}
+	if (scrollPathP12 * 4 <= 10 && scrollPathP12 * 4 > 0) {
+		pathP12.style.transform = `scaleX(${(scrollPathP12 * 4) / 10})`;
+	} else if (scrollPathP12 * 4 < 0) {
+		pathP12.style.transform = `scaleX(0)`;
+	} else if (scrollPathP12 * 4 > 40 || scrollPathP12 * 4 > 10) {
+		pathP12.style.transform = `scaleX(1)`;
+	}
 };
 
 splitItem.forEach((item) => {
@@ -426,11 +539,18 @@ images.forEach((image) => {
 		innerCursor.classList.remove("grow");
 	});
 });
-document.addEventListener("DOMContentLoaded", changePosition);
-window.addEventListener("scroll", scrollHeader);
-window.onbeforeunload = function () {
-	window.scrollTo(0, 0);
+
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear();
+	footerYear.innerText = year;
 };
+handleCurrentYear();
+
+// document.addEventListener("DOMContentLoaded", changePosition);
+window.addEventListener("scroll", scrollHeader);
+// window.onbeforeunload = function () {
+// 	window.scrollTo(0, 0);
+// };
 splitItem.forEach((item) => item.addEventListener("click", chooseSplitA));
 splitItemB.forEach((item) => item.addEventListener("click", chooseSplitB));
 window.addEventListener("scroll", scrollSplitText);

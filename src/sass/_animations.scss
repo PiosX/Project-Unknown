@@ -76,14 +76,6 @@
 		transform: translateX(-100%);
 	}
 }
-@keyframes line-word-anim-s {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
-}
 
 @keyframes cursorRotation {
 	0% {
@@ -100,5 +92,21 @@
 	}
 	100% {
 		opacity: 0;
+	}
+}
+@keyframes rotateTriangleR {
+	0% {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+@keyframes rotateTriangleL {
+	0% {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
 	}
 }
