@@ -58,7 +58,7 @@ body {
 		&-item {
 			position: absolute;
 			left: 93.5%;
-			transform: translateX(500px);
+			transform: translateX(2000px);
 			font-size: 2rem;
 			text-transform: uppercase;
 			color: #fff;
@@ -79,6 +79,10 @@ body {
 		&-item:nth-child(5) {
 			top: 80%;
 		}
+		&-item:nth-child(6) {
+			left: 55%;
+			top: 97%;
+		}
 	}
 
 	&__title {
@@ -89,7 +93,7 @@ body {
 		text-transform: uppercase;
 		font-size: 15rem;
 		color: #fff;
-		z-index: 2;
+		z-index: 3;
 		// mix-blend-mode: difference;
 		// pointer-events: none;
 		-webkit-text-fill-color: transparent;
@@ -106,7 +110,7 @@ body {
 			color: #fff;
 			text-transform: uppercase;
 			font-weight: bold;
-			z-index: 2;
+			z-index: 3;
 			opacity: 0;
 		}
 	}
@@ -146,7 +150,7 @@ body {
 			width: 90%;
 			height: 90%;
 			background-size: cover;
-			z-index: 1;
+			z-index: 2;
 		}
 		.item-pos-anim {
 			animation: transformItems 1s forwards;
@@ -491,6 +495,7 @@ body {
 			position: absolute;
 			background-color: #fff;
 			z-index: 2;
+			transition: opacity 1s;
 		}
 		&-item:nth-child(1) {
 			top: 0;
@@ -766,12 +771,32 @@ body {
 			transform: translateX(100vh);
 			transition: transform 1s;
 		}
+		&-content {
+			position: absolute;
+			top: 50%;
+			width: 40%;
+			font-size: 5rem;
+			text-transform: uppercase;
+			transform: translate(-50%, -50%);
+			line-height: 1.2;
+			font-weight: bold;
+			transition: transform 1s;
+			&--first {
+				left: 70%;
+				transform: translateX(2000px);
+			}
+			&--second {
+				left: 30%;
+				text-align: right;
+				transform: translateX(-2000px);
+			}
+		}
 	}
 	.textAnimS {
-		animation: dash 2s ease-out forwards;
+		animation: dash 1s ease-out forwards;
 	}
 	.textAnimS-r {
-		animation: dash-r 2s ease-in forwards;
+		animation: dash-r 1s ease-in forwards;
 	}
 }
 
@@ -1340,6 +1365,28 @@ body {
 			left: 25%;
 			width: 2px;
 			height: 17vh;
+		}
+	}
+	&__prediction {
+		position: absolute;
+		width: 100%;
+		&-text {
+			position: absolute;
+			color: #fff;
+			font-size: 2rem;
+			text-transform: uppercase;
+		}
+		&-text:nth-child(1) {
+			top: 36vh;
+			left: 87%;
+		}
+		&-text:nth-child(2) {
+			top: 136vh;
+			left: 2%;
+		}
+		&-text:nth-child(3) {
+			top: 236vh;
+			left: 85%;
 		}
 	}
 }

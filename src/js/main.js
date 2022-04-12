@@ -10,6 +10,8 @@ const splitBoxes = document.querySelectorAll(".split__box");
 const splitText = document.querySelector(".split__text--first");
 const splitTextC = document.querySelectorAll(".split__text--second");
 const splitTextB = document.querySelector(".split__text--third");
+const splitContent = document.querySelector(".split__text-content--first");
+const splitContentB = document.querySelector(".split__text-content--second");
 const pastItems = document.querySelectorAll(".past__img-past");
 const footerYear = document.querySelector(".footer__year");
 
@@ -58,6 +60,7 @@ const hText2 = document.querySelector(".header__thought-item:nth-child(2)");
 const hText3 = document.querySelector(".header__thought-item:nth-child(3)");
 const hText4 = document.querySelector(".header__thought-item:nth-child(4)");
 const hText5 = document.querySelector(".header__thought-item:nth-child(5)");
+const hText6 = document.querySelector(".header__thought-item:nth-child(6)");
 
 const options = {
 	threshold: 0.75,
@@ -66,6 +69,7 @@ const options = {
 let interval = 1;
 let intervalS = 1;
 let clicked = 0;
+let clickedSplit = 0;
 let windowScroll = 0;
 let innerCursor = document.querySelector(".inner-cursor");
 let images = Array.from(document.querySelectorAll(".img"));
@@ -149,27 +153,32 @@ const scrollHeader = () => {
 	if (scrollTextH >= 10) {
 		hText1.style.transform = `translateX(0)`;
 	} else {
-		hText1.style.transform = `translateX(500px)`;
+		hText1.style.transform = `translateX(2000px)`;
 	}
 	if (scrollTextH >= 25) {
 		hText2.style.transform = `translateX(0)`;
 	} else {
-		hText2.style.transform = `translateX(500px)`;
+		hText2.style.transform = `translateX(2000px)`;
 	}
 	if (scrollTextH >= 40) {
 		hText3.style.transform = `translateX(0)`;
 	} else {
-		hText3.style.transform = `translateX(500px)`;
+		hText3.style.transform = `translateX(2000px)`;
 	}
 	if (scrollTextH >= 55) {
 		hText4.style.transform = `translateX(0)`;
 	} else {
-		hText4.style.transform = `translateX(500px)`;
+		hText4.style.transform = `translateX(2000px)`;
 	}
 	if (scrollTextH >= 70) {
 		hText5.style.transform = `translateX(0)`;
 	} else {
-		hText5.style.transform = `translateX(500px)`;
+		hText5.style.transform = `translateX(2000px)`;
+	}
+	if (scrollTextH >= 100) {
+		hText6.style.transform = `translateX(0)`;
+	} else {
+		hText6.style.transform = `translateX(2000px)`;
 	}
 	if (scrollH1Mask) {
 		h1Mask.style.opacity = `${scrollH1Mask / 200}`;
@@ -477,28 +486,50 @@ splitItemB.forEach((item) => {
 const scrollSplitText = () => {
 	let value1 = -window.innerHeight + (window.scrollY - windowScroll);
 	let value2 = window.innerHeight - (window.scrollY - windowScroll);
-	if (windowScroll != 0 && value1 <= 0 && value2 >= 0) {
-		splitText.style.transform = `translateX(${value1}px)`;
-		splitTextB.style.transform = `translateX(${value2}px)`;
-	} else {
-		splitText.style.transform = `translateX(${0}px)`;
-		splitTextB.style.transform = `translateX(${0}px)`;
-		windowScroll = 6 * window.innerHeight;
+	if (pathS1.style.opacity != "0") {
+		if (windowScroll != 0 && value1 <= 0 && value2 >= 0) {
+			splitText.style.transform = `translateX(${value1}px)`;
+			splitTextB.style.transform = `translateX(${value2}px)`;
+		} else {
+			splitText.style.transform = `translateX(${0}px)`;
+			splitTextB.style.transform = `translateX(${0}px)`;
+			windowScroll = 6 * window.innerHeight;
+		}
 	}
 };
 
 const hideSplitText = (e) => {
 	splitTextC.forEach((text) => {
 		if (text.classList.contains("textAnimS")) {
-			text.style.strokeDashoffset = 500;
 			text.classList.add("textAnimS-r");
 			text.classList.remove("textAnimS");
 		} else {
-			text.style.strokeDashoffset = 0;
 			text.classList.add("textAnimS");
 			text.classList.remove("textAnimS-r");
 		}
 	});
+	hidePath();
+};
+const hidePath = () => {
+	clickedSplit++;
+	if (clicked % 2 != 0) {
+		pathS1.style.opacity = `0`;
+		pathS2.style.opacity = `0`;
+		pathS3.style.opacity = `0`;
+		pathS4.style.opacity = `0`;
+		pathS5.style.opacity = `0`;
+		pathS6.style.opacity = `0`;
+		pathS7.style.opacity = `0`;
+	} else {
+		pathS1.style.opacity = `1`;
+		pathS2.style.opacity = `1`;
+		pathS3.style.opacity = `1`;
+		pathS4.style.opacity = `1`;
+		pathS5.style.opacity = `1`;
+		pathS6.style.opacity = `1`;
+		pathS7.style.opacity = `1`;
+	}
+	console.log(clickedSplit);
 };
 
 const chooseSplitA = () => {
@@ -508,11 +539,13 @@ const chooseSplitA = () => {
 		splitBoxB.style.transform = "translateX(0)";
 		splitText.style.transform = "translateX(0)";
 		splitTextB.style.transform = "translateX(0)";
+		splitContent.style.transform = `translateX(2000px)`;
 	} else {
 		splitBox.style.transform = "translateX(-50%)";
 		splitBoxB.style.transform = "translateX(250%)";
 		splitText.style.transform = "translateX(10%)";
 		splitTextB.style.transform = "translateX(20%)";
+		splitContent.style.transform = `translate(-50%,-50%)`;
 	}
 };
 const chooseSplitB = () => {
@@ -522,11 +555,13 @@ const chooseSplitB = () => {
 		splitBox.style.transform = "translateX(0)";
 		splitText.style.transform = "translateX(0)";
 		splitTextB.style.transform = "translateX(0)";
+		splitContentB.style.transform = `translateX(-2000px)`;
 	} else {
 		splitBoxB.style.transform = "translateX(50%)";
 		splitBox.style.transform = "translateX(-250%)";
 		splitText.style.transform = "translateX(-10%)";
 		splitTextB.style.transform = "translateX(-10%)";
+		splitContentB.style.transform = `translate(-50%,-50%)`;
 	}
 };
 
