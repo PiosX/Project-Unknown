@@ -62,6 +62,23 @@ const hText4 = document.querySelector(".header__thought-item:nth-child(4)");
 const hText5 = document.querySelector(".header__thought-item:nth-child(5)");
 const hText6 = document.querySelector(".header__thought-item:nth-child(6)");
 
+const mText1 = document.querySelector(".map__prediction-text:nth-child(1)");
+const mText2 = document.querySelector(".map__prediction-text:nth-child(2)");
+const mText3 = document.querySelector(".map__prediction-text:nth-child(3)");
+
+const pText1 = document.querySelector(".past__date-item:nth-child(1)");
+const pText2 = document.querySelector(".past__date-item:nth-child(2)");
+const pText3 = document.querySelector(".past__date-item:nth-child(3)");
+const pText4 = document.querySelector(".past__date-item:nth-child(4)");
+
+const mCont1 = document.querySelector(".map-box--first-content-text");
+const mCont2 = document.querySelector(".map-box--second-content-text");
+const mCont3 = document.querySelector(".map-box--third-content-text");
+
+const mAuth1 = document.querySelector(".map-box--first-content-author");
+const mAuth2 = document.querySelector(".map-box--second-content-author");
+const mAuth3 = document.querySelector(".map-box--third-content-author");
+
 const options = {
 	threshold: 0.75,
 };
@@ -184,6 +201,71 @@ const scrollHeader = () => {
 		h1Mask.style.opacity = `${scrollH1Mask / 200}`;
 	} else {
 		h1Mask.style.opacity = `0`;
+	}
+	if (scrollTextH >= 250) {
+		mText1.style.transform = `translateX(0)`;
+	} else {
+		mText1.style.transform = `translateX(2000px)`;
+	}
+	if (scrollTextH >= 290) {
+		mText2.style.transform = `translateX(0)`;
+	} else {
+		mText2.style.transform = `translateX(-2000px)`;
+	}
+	if (scrollTextH >= 320) {
+		mText3.style.transform = `translateX(0)`;
+	} else {
+		mText3.style.transform = `translateX(2000px)`;
+	}
+	if (scrollTextH >= 400) {
+		pText1.style.opacity = `1`;
+	} else {
+		pText1.style.opacity = `0`;
+	}
+	if (scrollTextH >= 397) {
+		pText2.style.opacity = `1`;
+	} else {
+		pText2.style.opacity = `0`;
+	}
+	if (scrollTextH >= 402) {
+		pText3.style.opacity = `1`;
+	} else {
+		pText3.style.opacity = `0`;
+	}
+	if (scrollTextH >= 403) {
+		pText4.style.opacity = `1`;
+	} else {
+		pText4.style.opacity = `0`;
+	}
+	if (scrollTextH >= 270) {
+		mCont1.style.transform = `translateX(0)`;
+	} else {
+		mCont1.style.transform = `translateX(-2000px)`;
+	}
+	if (scrollTextH >= 300) {
+		mCont2.style.transform = `translateX(0)`;
+	} else {
+		mCont2.style.transform = `translateX(2000px)`;
+	}
+	if (scrollTextH >= 335) {
+		mCont3.style.transform = `translateX(0)`;
+	} else {
+		mCont3.style.transform = `translateX(-2000px)`;
+	}
+	if (scrollTextH >= 275) {
+		mAuth1.style.transform = `translateX(0)`;
+	} else {
+		mAuth1.style.transform = `translateX(-2000px)`;
+	}
+	if (scrollTextH >= 305) {
+		mAuth2.style.transform = `translateX(0)`;
+	} else {
+		mAuth2.style.transform = `translateX(2000px)`;
+	}
+	if (scrollTextH >= 340) {
+		mAuth3.style.transform = `translateX(0)`;
+	} else {
+		mAuth3.style.transform = `translateX(-2000px)`;
 	}
 	if (scrollPath1 <= 85) {
 		path1.style.height = `${scrollPath1}vh`;
