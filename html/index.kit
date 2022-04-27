@@ -3,18 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Pios">
-    <meta name="description" content="Unknown description">
+    <meta name="author" content="Piotr Daraszkiewicz">
+    <meta name="description" content="Imagine your future.">
+    <meta name="theme-color" content="#ffc600">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pastfuture</title>
     <!-- @include 'styles.kit' -->
 </head>
 
 <body>
     <!-- @include 'nav.kit' -->
     <div class="inner-cursor"></div>
-
+    <div class="splash-scene">
+        <div class="splash-scene__triangle"></div>
+        <p class="splash-scene__text" data-number="100">0</p>
+    </div>
     <main class="main">
         <section class="header">
             <h1 class="header__title">Pastfuture
@@ -44,97 +48,6 @@
                 </div>
                 <div class="header__box-item header__box-item--fifth">
                 </div>
-                <!-- <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div>
-                <div class="header__box-item"></div> -->
-
-
-                <!-- <div class="header__box-item img item-anim"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img item-anim"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img item-anim"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img item-anim"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img item-anim"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div>
-                <div class="header__box-item img"></div> -->
             </div>
         </section>
         <section class="split">
@@ -150,11 +63,11 @@
             <div class="split__text">
                 <h2 class="split__text--first">Balance</h2>
                 <div class="split__text-versus">
-                    <svg stroke="#fff" stroke-width="1" class="split__text--second"><text x="50%"
+                    <svg stroke="#ffc600" stroke-width="1" class="split__text--second"><text x="50%"
                             dominant-baseline="middle" text-anchor="middle" y="50%">Versus</text></svg>
-                    <svg stroke="#fff" stroke-width="1" class="split__text--second"><text x="50%"
+                    <svg stroke="#ffc600" stroke-width="1" class="split__text--second"><text x="50%"
                             dominant-baseline="middle" text-anchor="middle" y="50%">Versus</text></svg>
-                    <svg stroke="#fff" stroke-width="1" class="split__text--second"><text x="50%"
+                    <svg stroke="#ffc600" stroke-width="1" class="split__text--second"><text x="50%"
                             dominant-baseline="middle" text-anchor="middle" y="50%">Versus</text></svg>
 
                 </div>
@@ -216,6 +129,11 @@
         </section>
         <section class="map">
             <h2 class="map-title">what might be next?</h2>
+            <div class="map__triangle">
+                <div class="map__triangle-item"></div>
+                <div class="map__triangle-item"></div>
+                <div class="map__triangle-item"></div>
+            </div>
             <div class="path-m">
                 <div class="path-m-item"></div>
                 <div class="path-m-item"></div>
@@ -468,13 +386,17 @@
             </div>
         </section>
         <section class="ending">
-            <strong class="ending__text1">We are</strong>
-            <strong class="ending__text2">
+            <strong class="ending__text1 endtext">We are</strong>
+            <strong class="ending__text2 endtext">
                 the key
             </strong>
-            <strong class="ending__text3">to the</strong>
-            <strong class="ending__text4">future</strong>
+            <strong class="ending__text3 endtext">to the</strong>
+            <strong class="ending__text4 endtext">future</strong>
             <strong class="ending__text5">Remember that</strong>
+            <div class="ending__triangle">
+                <div class="ending__triangle-item"></div>
+                <div class="ending__triangle-item"></div>
+            </div>
         </section>
     </main>
     <footer class="footer">

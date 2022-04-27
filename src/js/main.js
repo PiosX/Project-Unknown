@@ -14,6 +14,8 @@ const splitContent = document.querySelector(".split__text-content--first");
 const splitContentB = document.querySelector(".split__text-content--second");
 const pastItems = document.querySelectorAll(".past__img-past");
 const footerYear = document.querySelector(".footer__year");
+const splashScene = document.querySelector(".splash-scene");
+const counter = document.querySelector(".splash-scene__text");
 
 const path1 = document.querySelector(".path-item:nth-child(1)");
 const path2 = document.querySelector(".path-item:nth-child(2)");
@@ -99,37 +101,11 @@ const moveCursor = (e) => {
 	innerCursor.style.top = `${y}px`;
 };
 
-// const changePosition = () => {
-// 	let j = 0;
-// 	glassItem.forEach((item) => {
-// 		if (!item.classList.contains("item-anim")) {
-// 			item.style.opacity = 0;
-// 		}
-// 		j++;
-// 	});
-// };
-
 const scrollHeader = () => {
 	const value = window.scrollY;
 	const height = window.innerHeight;
-	// for (let i = 0; i < 85; i++) {
-	// 	if (height < value && i % 5 == 0) {
-	// 		glassItem[i].classList.add("item-pos-anim");
-	// 	}
-	// 	if (2 * height < value && i % 4 == 0) {
-	// 		glassItem[i].classList.add("item-pos-anim");
-	// 	}
-	// 	if (3 * height < value && i % 3 == 0) {
-	// 		glassItem[i].classList.add("item-pos-anim");
-	// 	}
-	// 	if (4 * height < value && i % 2 == 0) {
-	// 		glassItem[i].classList.add("item-pos-anim");
-	// 	}
-	// 	if (5 * height < value && i % 1 == 0) {
-	// 		glassItem[i].classList.add("item-pos-anim");
-	// 	}
-	// }
 	const toScroll = 3 * header.clientHeight - window.innerHeight;
+
 	const scrollPath1 = Math.floor((value / toScroll) * 65);
 	const scrollPath2 = Math.floor((value / toScroll) * 65 - 85);
 	const scrollPath3 = Math.floor((value / toScroll) * 65 - 95 - 90);
@@ -552,19 +528,6 @@ splitItemB.forEach((item) => {
 	observer.observe(item);
 });
 
-// const observer = new IntersectionObserver(
-// 	function (entries, observer) {
-// 		entries.forEach((entry) => {
-// 			if (entry.isIntersecting) {
-// 				window.scrollTo(0, split.offsetTop);
-// 				return;
-// 			}
-// 		});
-// 	},
-// 	{ threshold: 0.5 }
-// );
-// observer.observe(split);
-
 const scrollSplitText = () => {
 	let value1 = -window.innerHeight + (window.scrollY - windowScroll);
 	let value2 = window.innerHeight - (window.scrollY - windowScroll);
@@ -594,7 +557,7 @@ const hideSplitText = (e) => {
 };
 const hidePath = () => {
 	clickedSplit++;
-	if (clicked % 2 != 0) {
+	if (clickedSplit % 2 != 0) {
 		pathS1.style.opacity = `0`;
 		pathS2.style.opacity = `0`;
 		pathS3.style.opacity = `0`;
@@ -611,11 +574,11 @@ const hidePath = () => {
 		pathS6.style.opacity = `1`;
 		pathS7.style.opacity = `1`;
 	}
-	console.log(clickedSplit);
 };
 
 const chooseSplitA = () => {
 	clicked++;
+	hideSplitText();
 	if (clicked % 2 == 0) {
 		splitBox.style.transform = "translateX(0)";
 		splitBoxB.style.transform = "translateX(0)";
@@ -632,6 +595,7 @@ const chooseSplitA = () => {
 };
 const chooseSplitB = () => {
 	clicked++;
+	hideSplitText();
 	if (clicked % 2 == 0) {
 		splitBoxB.style.transform = "translateX(0)";
 		splitBox.style.transform = "translateX(0)";
@@ -663,16 +627,30 @@ const handleCurrentYear = () => {
 };
 handleCurrentYear();
 
-// document.addEventListener("DOMContentLoaded", changePosition);
+const splashSceneCounter = () => {
+	const finalNumber = counter.getAttribute("data-number");
+	const value = parseInt(counter.textContent);
+
+	const speed = finalNumber / 50;
+
+	if (value < finalNumber) {
+		counter.textContent = `${Math.floor(value + speed)}`;
+		setTimeout(splashSceneCounter, 50);
+	} else {
+		counter.textContent = finalNumber;
+	}
+	if (value == 100) {
+		splashScene.classList.add("splashAnim");
+	}
+};
+splashSceneCounter();
+
 window.addEventListener("scroll", scrollHeader);
-// window.onbeforeunload = function () {
-// 	window.scrollTo(0, 0);
-// };
 splitItem.forEach((item) => item.addEventListener("click", chooseSplitA));
 splitItemB.forEach((item) => item.addEventListener("click", chooseSplitB));
+splitContent.addEventListener("click", chooseSplitA);
+splitContentB.addEventListener("click", chooseSplitB);
 window.addEventListener("scroll", scrollSplitText);
-splitItem.forEach((box) => box.addEventListener("click", hideSplitText));
-splitItemB.forEach((box) => box.addEventListener("click", hideSplitText));
 pastItems.forEach((item) => {
 	item.addEventListener("mouseover", () => {
 		item.classList.add("hidePastEl");
